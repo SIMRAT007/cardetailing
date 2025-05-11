@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import Navbar from '../component/Navbar';
+import Navbar from '../component/navbar';
 import colors from '../constants/colors';
 import herovideo1 from '../assets/herovideo1.mp4';
 import herovideo2 from '../assets/herovideo2.mp4';
