@@ -11,6 +11,8 @@ import CTA from '../component/CTA';
 import FAQ from '../component/FAQ';
 import ContactUs from '../component/contactus';
 import Footer from '../component/footer';
+import Timing from '../component/timing';
+import QuickService from '../component/QuickService';
 
 const Home = () => {
   return (
@@ -24,6 +26,7 @@ const Home = () => {
         <AboutUs/>
   </div>
   <WhyUs/>
+  <QuickService/>
   <div className="bg-gray-200 items-center justify-center mt-10 md:mx-10 rounded-3xl overflow-hidden">
         <Services/>
         <Pricing/>
@@ -33,9 +36,10 @@ const Home = () => {
 <div className="bg-gray-200 items-center justify-center mt-10 md:mx-10 rounded-3xl overflow-hidden">
      <FAQ/>
      <CTA/>
+     <Timing/>
   </div>
   <ContactUs />
-  <div className="items-center justify-center mt-10 md:mx-10 rounded-3xl overflow-hidden">
+  <div className="items-center justify-center mt-10 md:mx-10 rounded-3xl overflow-hidden ">
   <Footer/>
   </div>
 

@@ -5,29 +5,32 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What services are included in your car detailing packages?",
-      answer:
-        "Our car detailing packages include exterior washing, waxing, interior vacuuming, upholstery cleaning, tire and rim cleaning, and optional ceramic coating for long-lasting protection.",
-    },
-    {
-      question: "How long does a full car detailing service take?",
-      answer:
-        "A full car detailing service typically takes 2-4 hours, depending on the size and condition of your vehicle. Advanced services like ceramic coating may take longer.",
-    },
-    {
-      question: "Do you offer mobile car detailing services?",
-      answer:
-        "Yes, we offer mobile car detailing services. Our team can come to your location with all the necessary equipment to provide professional detailing services at your convenience.",
+      question: "What car details services do you offer?",
+      answer: "We offer comprehensive detailing services including interior and exterior detailing, paint correction, ceramic coating, engine bay cleaning, headlight restoration, and specialized stain removal treatments. Each service is customized to meet your vehicle's specific needs.",
     },
     {
       question: "How often should I get my car detailed?",
-      answer:
-        "We recommend getting your car detailed every 3-6 months to maintain its appearance and protect it from wear and tear. Regular detailing helps preserve your car's value.",
+      answer: "For optimal results, we recommend detailing your car every 3-4 months. However, this can vary based on factors like your driving conditions, climate, and how you store your vehicle. Regular maintenance helps preserve your car's value and appearance.",
     },
     {
-      question: "What is ceramic coating, and is it worth it?",
-      answer:
-        "Ceramic coating is a protective layer applied to your car's paint to shield it from dirt, UV rays, and minor scratches. It provides a glossy finish and long-lasting protection, making it a great investment for your vehicle.",
+      question: "What's included in your car wash services?",
+      answer: "Our car wash services include thorough exterior cleaning, wheel cleaning, tire dressing, window cleaning, and basic interior cleaning. We use premium products and techniques to ensure a spotless finish without damaging your vehicle's surfaces.",
+    },
+    {
+      question: "Do you offer specialized treatments for specific stains or odors?",
+      answer: "Yes, we offer specialized treatments for tough stains, persistent odors, and specific materials. Our team is equipped with professional-grade products and techniques to handle everything from pet odors to difficult upholstery stains.",
+    },
+    {
+      question: "Can I schedule a car wash service without detailing?",
+      answer: "Absolutely! We offer standalone car wash services for customers who want a quick refresh without a full detail. You can choose from our basic wash packages or customize the services according to your needs.",
+    },
+    {
+      question: "Is there a warranty for your detailing services?",
+      answer: "Yes, we stand behind our work with a satisfaction guarantee. Specific warranties vary by service, with ceramic coating treatments carrying longer-term protection guarantees. We'll discuss the warranty details before beginning any service.",
+    },
+    {
+      question: "How long does a typical detailing session take?",
+      answer: "Detailing times vary, but expect 2-4 hours for a thorough service. The exact duration depends on your vehicle's size, condition, and the services selected. We'll provide a time estimate before starting the work.",
     },
   ];
 
@@ -51,7 +54,7 @@ const FAQ = () => {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`accordion py-8 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl ${
+              className={`accordion py-5 px-6 border-b border-solid border-gray-200 transition-all duration-500 rounded-2xl cursor-pointer ${
                 activeIndex === index ? 'bg-red-50' : ''
               }`}
             >
@@ -60,7 +63,7 @@ const FAQ = () => {
                 onClick={() => toggleAccordion(index)}
                 aria-expanded={activeIndex === index}
               >
-                <h5>{faq.question}</h5>
+                <h5 className='text-xl font-medium text-gray-900 hover:text-red-600 cursor-pointer'>{faq.question}</h5>
                 <svg
                   className={`text-gray-500 transition duration-500 group-hover:text-red-600 ${
                     activeIndex === index ? 'rotate-180' : ''

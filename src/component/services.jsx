@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCar, FaWater, FaTools, FaOilCan, FaBatteryFull, FaSnowflake, FaPaintRoller, FaLightbulb, FaShieldAlt } from 'react-icons/fa';
+import { FaCar, FaWater, FaTools, FaOilCan, FaBatteryFull, FaBrush, FaCogs, FaChair, FaShieldAlt, FaSprayCan, FaStar, FaComments, FaUserTie } from 'react-icons/fa';
 
 const servicesData = [
   {
@@ -8,8 +8,8 @@ const servicesData = [
     icon: <FaCar className="text-red-600 text-3xl" />,
   },
   {
-    title: "Steam Wash",
-    description: "High-pressure steam cleaning for a deep and eco-friendly wash of your car’s exterior and interior.",
+    title: "Vacuum Service",
+    description: "Thorough vacuuming of your car’s interior to remove dust, dirt, and debris.",
     icon: <FaWater className="text-red-600 text-3xl" />,
   },
   {
@@ -28,24 +28,47 @@ const servicesData = [
     icon: <FaBatteryFull className="text-red-600 text-3xl" />,
   },
   {
-    title: "AC Service",
-    description: "Ensure your car’s air conditioning system is working efficiently with our AC services.",
-    icon: <FaSnowflake className="text-red-600 text-3xl" />,
+    title: "Car Detailing",
+    description: "Professional detailing services to restore and enhance your vehicle's appearance inside and out.",
+    icon: <FaSprayCan className="text-red-600 text-3xl" />,
   },
   {
-    title: "Ceramic Coating",
-    description: "Protect your car’s paint with our advanced ceramic coating services for a long-lasting shine.",
-    icon: <FaPaintRoller className="text-red-600 text-3xl" />,
+    title: "Exterior Polishing",
+    description: "Enhance your car’s appearance with our professional exterior polishing services for a glossy finish.",
+    icon: <FaBrush className="text-red-600 text-3xl" />,
   },
   {
-    title: "Headlight Restoration",
-    description: "Restore your headlights to their original clarity for improved visibility and aesthetics.",
-    icon: <FaLightbulb className="text-red-600 text-3xl" />,
+    title: "Interior Cleaning",
+    description: "Deep cleaning of your car's interior including seats, dashboard, and all surfaces for a fresh look.",
+    icon: <FaChair className="text-red-600 text-3xl" />,
   },
   {
-    title: "Paint Protection Film (PPF)",
-    description: "Protect your car’s paint from scratches, chips, and environmental damage with our high-quality PPF services.",
+    title: "Engine Bay Cleaning",
+    description: "Thorough cleaning and detailing of your engine bay to maintain performance and aesthetics.",
+    icon: <FaCogs className="text-red-600 text-3xl" />,
+  },
+];
+
+const featuresData = [
+  {
+    title: "High Professionalism",
+    description: "Exemplary expertise, unparalleled service, and a commitment to utmost professionalism.",
+    icon: <FaUserTie className="text-red-600 text-3xl" />,
+  },
+  {
+    title: "Stunning Results",
+    description: "Expect stunning results, as our expertise transforms visions into remarkable reality.",
+    icon: <FaStar className="text-red-600 text-3xl" />,
+  },
+  {
+    title: "Long-lasting Protection",
+    description: "Ensuring enduring safeguard with our solutions for long-lasting protection and resilience.",
     icon: <FaShieldAlt className="text-red-600 text-3xl" />,
+  },
+  {
+    title: "Free Consultations",
+    description: "Unlock insights with our complimentary, guiding you towards informed decisions.",
+    icon: <FaComments className="text-red-600 text-3xl" />,
   },
 ];
 
@@ -56,9 +79,10 @@ const Services = () => {
         {/* Header Section */}
         <div className="mb-10 lg:mb-16 flex justify-center items-center flex-col gap-x-0 gap-y-6 lg:gap-y-0 lg:flex-row lg:justify-between max-md:max-w-lg max-md:mx-auto">
           <div className="relative w-full text-center lg:text-left lg:w-2/4">
-            <h2 className="text-4xl font-bold text-gray-900 leading-[3.25rem] lg:mb-6 mx-auto max-w-max lg:max-w-md lg:mx-0">
-              Premium Car Detailing Services
-            </h2>
+            <h2 className="text-4xl font-bold leading-[3.25rem] lg:mb-6 mx-auto max-w-max lg:max-w-md lg:mx-0 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-black">
+  Premium Car Detailing Services
+</h2>
+
           </div>
           <div className="relative w-full text-center lg:text-left lg:w-2/4">
             <p className="text-lg font-normal text-gray-500 mb-5">
@@ -86,6 +110,38 @@ const Services = () => {
             </div>
           ))}
         </div>
+
+        {/* Features Section */}
+        <div className="mt-24">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Simple, affordable, and effective car detailing products.
+            </h2>
+            <h3 className="text-xl font-semibold text-red-600">
+              Contact us for more information about our services and products.
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featuresData.map((feature, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="bg-gray-50 rounded-full w-16 h-16 flex items-center justify-center mb-6 group-hover:bg-red-50 transition-all duration-300">
+                  {feature.icon}
+                </div>
+                <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

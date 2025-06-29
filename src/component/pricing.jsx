@@ -1,38 +1,70 @@
 import React from 'react';
+import { FaCar, FaCarSide, FaGem, FaPhoneAlt } from 'react-icons/fa';
 
 const Pricing = () => {
+    const handleCall = () => {
+      window.location.href = 'tel:+16394230070';
+    };
+
     const pricingPlans = [
       {
-        title: "Basic Wash",
-        price: "$20",
-        duration: "Per Wash",
+        title: "Silver Package",
+        subtitle: "Interior only",
+        price: "154",
+        cents: ".99",
+        currency: "CA$",
+        duration: "Starting",
+        icon: <FaCarSide className="w-6 h-6" />,
         features: [
-          "Exterior hand wash",
-          "Tire and rim cleaning",
-          "Basic interior vacuum",
-          "Spot-free rinse and dry",
+          "Interior clean only",
+          "Vacuum & Steam Cleaning",
+          "Stain removal for carpets & seats",
+          "Floor mats & rear hatch cleaning",
+          "Vent cleaning & sanitization",
+          "Dashboard cleaning & dressing",
+          "Cupholders & doors detailing",
+          "All plastics treatment",
+          "Windows & door seals cleaning"
         ],
       },
       {
-        title: "Deluxe Wash",
-        price: "$50",
-        duration: "Per Wash",
+        title: "Gold Package",
+        subtitle: "Interior & Exterior",
+        price: "184",
+        cents: ".99",
+        currency: "CA$",
+        duration: "Starting",
+        icon: <FaCar className="w-6 h-6" />,
         features: [
-          "Exterior hand wash and wax",
-          "Tire and rim detailing",
-          "Full interior vacuum & wipe-down",
-          "Window cleaning (inside and out)",
+          "Complete interior cleaning",
+          "Steam cleaning & stain removal",
+          "Dash & plastics treatment",
+          "Windows & seals cleaning",
+          "Exterior hand wash & dry",
+          "Body panels & bumpers cleaning",
+          "Pressure wash treatment",
+          "Rims & tires cleaning",
+          "Running boards & wheel wells"
         ],
       },
       {
-        title: "Premium Detailing",
-        price: "$150",
-        duration: "Per Service",
+        title: "Diamond Package",
+        subtitle: "Full Interior & Exterior",
+        price: "279",
+        cents: ".99",
+        currency: "CA$",
+        duration: "Starting",
+        icon: <FaGem className="w-6 h-6" />,
         features: [
-          "Complete exterior and interior detailing",
-          "Clay bar treatment and polish",
-          "Engine bay cleaning",
-          "Ceramic coating application",
+          "Complete interior & exterior service",
+          "Headliner & leather conditioning",
+          "Clay bar treatment",
+          "Banana wax polish",
+          "Engine gentle wash",
+          "Vinyl & tires dressing",
+          "Rims special treatment",
+          "Hinges lubrication",
+          "Glass water repellent treatment"
         ],
       },
     ];
@@ -60,30 +92,28 @@ const Pricing = () => {
             >
               <div className="border-b border-solid border-gray-200 pb-9 mb-9">
                 <div className="w-16 h-16 rounded-full bg-red-50 mx-auto flex justify-center items-center transition-all duration-300 group-hover:bg-red-600">
-                  <svg
-                    className="w-6 h-6 text-red-600 transition-all duration-300 group-hover:text-white"
-                    viewBox="0 0 31 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M8.42418 27.2608V12.0502C8.42418 11.8031 8.22388 11.6028 7.97681 11.6028V11.6028C5.55154 11.6028 4.3389 11.6028 3.58547 12.3562C2.83203 13.1097 2.83203 14.3223 2.83203 16.7476V22.116C2.83203 24.5413 2.83203 25.754 3.58547 26.5074C4.3389 27.2608 5.55154 27.2608 7.97681 27.2608H8.42418ZM8.42418 27.2608L8.42418 22.5246C8.42418 15.9141 9.90241 9.38734 12.7507 3.42199V3.42199C13.2066 2.46714 14.4408 2.19891 15.2519 2.87841C16.4455 3.87836 17.135 5.35554 17.135 6.91266V8.08463C17.135 9.40562 18.2059 10.4765 19.5269 10.4765H24.0982C25.1518 10.4765 25.6786 10.4765 26.0736 10.6078C27.0571 10.9346 27.7484 11.8197 27.8273 12.8531C27.859 13.2681 27.7314 13.7792 27.4762 14.8014L25.3389 23.3623C24.8715 25.2346 24.6377 26.1707 23.9399 26.7158C23.242 27.2609 22.2771 27.2609 20.3473 27.2609L8.42418 27.2608Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                  </svg>
+                  <div className="text-red-600 transition-all duration-300 group-hover:text-white">
+                    {plan.icon}
+                  </div>
                 </div>
-                <h3 className="font-manrope text-2xl font-bold my-7 text-center text-red-600">
+                <h3 className="font-manrope text-2xl font-bold mt-7 text-center text-red-600">
                   {plan.title}
                 </h3>
+                <h6 className="font-manrope text- font-bold my-2 mb-5 text-center text-red-800">
+                  {plan.subtitle}
+                </h6>
+
+                {/* Price Display Update */}
                 <div className="flex items-center justify-center">
+                  <span className="text-xl text-gray-600 mr-1">{plan.currency}</span>
                   <span className="font-manrope text-4xl font-medium text-gray-900">
                     {plan.price}
                   </span>
-                  <span className="text-xl text-gray-500 ml-3">
-                    |&nbsp; {plan.duration}
-                  </span>
+                  <span className="text-xl text-gray-600">{plan.cents}</span>
                 </div>
+                {/* <span className="text-center text-gray-500 mt-1">
+                  {plan.duration}
+                </span> */}
               </div>
 
               {/* Features List */}
@@ -96,12 +126,13 @@ const Pricing = () => {
                 ))}
               </ul>
 
-              <a
-                href="javascript:;"
-                className="py-2.5 px-5 bg-red-50 shadow-sm rounded-full transition-all duration-500 text-base text-red-600 font-semibold text-center w-fit mx-auto group-hover:bg-red-600 group-hover:text-white"
+              <button
+                onClick={handleCall}
+                className="py-2.5 px-5 bg-red-50 shadow-sm rounded-full transition-all duration-500 text-base text-red-600 font-semibold text-center w-fit mx-auto group-hover:bg-red-600 group-hover:text-white flex items-center gap-2"
               >
-                Purchase Plan
-              </a>
+                <FaPhoneAlt className="text-sm" />
+                CALL NOW
+              </button>
             </div>
           ))}
         </div>

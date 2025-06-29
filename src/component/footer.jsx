@@ -4,7 +4,7 @@ import { Link } from 'react-scroll'; // Import Link from react-scroll
 const Footer = () => {
   return (
     <>
-      <footer className="w-full py-14 bg-red-800 mt-10 rounded-3xl">
+      <footer className="w-full py-14 bg-red-800 mt-10 rounded-3xl mb-5">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <p className="mx-auto text-center uppercase text-black font-bold text-xl">

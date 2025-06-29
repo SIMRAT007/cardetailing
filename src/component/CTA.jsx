@@ -18,7 +18,7 @@ const CTA = () => {
           {/* Button Section */}
           <div className="flex gap-4">
             <a
-              href="tel:+1234567890"
+              href="tel:+1639-423-0070"
               className="flex items-center gap-2 bg-white rounded-full shadow-sm text-lg text-red-600 font-semibold py-4 px-8 transition-all duration-500"
             >
               Call Us Now

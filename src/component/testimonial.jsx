@@ -8,29 +8,83 @@ import { Navigation, Pagination } from 'swiper/modules';
 const Testimonial = () => {
   const testimonials = [
     {
-        name: "Priya S.",
-        role: "Car Enthusiast",
-        image: "https://pagedone.io/asset/uploads/1696229969.png",
-        feedback: "The car detailing service was outstanding! My car looks brand new, and the team was very professional.",
-      },
-      {
-        name: "Harsh P.",
-        role: "Business Owner",
-        image: "https://pagedone.io/asset/uploads/1696229994.png",
-        feedback: "I’ve tried many detailing services, but this one stands out. The ceramic coating is flawless!",
-      },
-      {
-        name: "Kamalpreet K.",
-        role: "Car Collector",
-        image: "https://pagedone.io/asset/uploads/1696229969.png",
-        feedback: "Exceptional attention to detail! My vintage car has never looked this good. Highly recommend!",
-      },
-      {
-        name: "Jashan S.",
-        role: "Daily Commuter",
-        image: "https://pagedone.io/asset/uploads/1696229994.png",
-        feedback: "The interior cleaning was amazing. My car smells fresh, and every corner is spotless!",
-      },
+      name: "Andrea Pfefferle",
+      role: "Local Guide",
+      image: "https://ui-avatars.com/api/?name=Andrea+P&background=f87171&color=fff",
+      feedback: "He came out and detailed my car at my workplace. He did an amazing job! My car looks better than new 😊 I highly recommend!"
+    },
+    {
+      name: "Jayde Harris",
+      role: "Regular Customer",
+      image: "https://ui-avatars.com/api/?name=Jayde+H&background=f87171&color=fff",
+      feedback: "Highly recommend. They cleaned two of our cars and they came out above and beyond, looking brand new again :) Thanks again!"
+    },
+    {
+      name: "Hakam Singh",
+      role: "Verified Customer",
+      image: "https://ui-avatars.com/api/?name=Hakam+S&background=f87171&color=fff",
+      feedback: "Highly professional car detailing at reasonable price. The guy was really helpful as he booked me a spot the same day I called in. Highly recommend if anybody needs car detailing service in Saskatoon and nearby areas."
+    },
+    {
+      name: "S. Hood",
+      role: "Verified Customer",
+      image: "https://ui-avatars.com/api/?name=S+Hood&background=f87171&color=fff",
+      feedback: "Legit. They came over a couple hours after calling them and detailed my car on the spot, quite well. The price was reasonable, similar to the last place I went to, but it was done the same day."
+    },
+    {
+      name: "Ange N",
+      role: "Local Guide",
+      image: "https://ui-avatars.com/api/?name=Ange+N&background=f87171&color=fff",
+      feedback: "Excellent job. Inside and trunk look good as new. Would recommend and he comes to you."
+    },
+    {
+      name: "Sukhman Sandhu",
+      role: "Regular Customer",
+      image: "https://ui-avatars.com/api/?name=Sukhman+S&background=f87171&color=fff",
+      feedback: "G saab detailing did a fantastic job cleaning my car inside and out. I was impressed by their speed without compromising on the quality of the work. He was friendly and professional and making me feel valued as a customer."
+    },
+    {
+      name: "Boss Man",
+      role: "New Customer",
+      image: "https://ui-avatars.com/api/?name=Boss+Man&background=f87171&color=fff",
+      feedback: "Had this gentleman come to my work place on Monday morning. Amazing job and price. 100% recommend"
+    },
+    {
+      name: "Lakhvir Sidhu",
+      role: "Verified Customer",
+      image: "https://ui-avatars.com/api/?name=Lakhvir+S&background=f87171&color=fff",
+      feedback: "Very good experience. Very helpful staff. And excellent service. I really appreciate"
+    },
+    {
+      name: "Manjinder Singh",
+      role: "Regular Customer",
+      image: "https://ui-avatars.com/api/?name=Manjinder+S&background=f87171&color=fff",
+      feedback: "His service is really good at affordable price. He also came to my place that saved my trip. He is a humble person. I am happy to refer to my friends."
+    },
+    {
+      name: "Harman Grewal",
+      role: "Verified Customer",
+      image: "https://ui-avatars.com/api/?name=Harman+G&background=f87171&color=fff",
+      feedback: "Highly recommended. G Saab detailing service is affordable and never compromises with quality."
+    },
+    {
+      name: "Jassi Singh",
+      role: "New Customer",
+      image: "https://ui-avatars.com/api/?name=Jassi+S&background=f87171&color=fff",
+      feedback: "Very good service in Saskatoon"
+    },
+    {
+      name: "Adrian Denzii",
+      role: "New Customer",
+      image: "https://ui-avatars.com/api/?name=Adrian+D&background=f87171&color=fff",
+      feedback: "Good service and very professional. I had my car detailed and it looks like new again. Highly recommend!"
+    },
+    {
+      name: "Irfan Jafri",
+      role: "Local Guide",
+      image: "https://ui-avatars.com/api/?name=Irfan+J&background=f87171&color=fff",
+      feedback: "Excellent service and attention to detail provided by G Saab. My car looks brand new. Highly recommend their services!"
+    }
   ];
 
   return (
@@ -115,7 +169,7 @@ const Testimonial = () => {
             >
               {testimonials.map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                  <div className="group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600">
+                  <div className="group bg-white border border-solid border-gray-300 rounded-2xl max-sm:max-w-sm max-sm:mx-auto p-6 transition-all duration-500 hover:border-indigo-600 min-h-90">
                     <div className="flex items-center gap-5 mb-5 sm:mb-9">
                       <img
                         className="rounded-full object-cover"

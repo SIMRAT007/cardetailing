@@ -3,9 +3,9 @@ import React from 'react';
 const Stats = () => {
   const statsData = [
     { value: "10+", label: "Yrs Experience" },
-    { value: "90%", label: "Happy Customers" },
+    { value: "98%", label: "Happy Customers" },
     { value: "50+", label: "Awards" },
-    { value: "500+", label: "Cars Washed" },
+    { value: "1k+", label: "Cars Washed" },
   ];
 
   return (

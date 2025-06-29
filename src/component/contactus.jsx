@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Cbg from '../assets/cbg.png'
 import Logo from '../assets/logo.png'
 
 const contactus = () => {
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        // Format: 16394230070 (1 is the country code for Canada)
+        const phoneNumber = '16394230070';
+        const encodedMessage = encodeURIComponent(
+            `*CAR SERVICE FOR*\n\nName: ${name}\nNumber: ${number}\nMessage: ${message}`
+        );
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+    };
+
+    const handleNumberChange = (e) => {
+        const value = e.target.value;
+        if (value.length <= 10) {
+            setNumber(value);
+        }
+    };
+
     return (
         <>
             <section class="py-24" id='contact'>
@@ -12,20 +36,35 @@ const contactus = () => {
                             <div class="">
                                 <h4 class="text-red-600 text-base font-medium leading-6 mb-4 lg:text-left text-center">Contact Us</h4>
                                 <h2 class="text-gray-300 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center">Reach Out To Us</h2>
-                                <form>
+                                <form onSubmit={handleSubmit} >
                                     <input
                                         type="text"
-                                        className="w-full h-14 shadow-sm text-gray-600 placeholder-gray-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
+                                        className="w-full h-14 shadow-sm text-white placeholder-gray-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
                                         placeholder="Your Name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required
                                     />
                                     <input
                                         type="number"
-                                        className="w-full h-14 shadow-sm text-gray-600 placeholder-gray-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
+                                        className="w-full h-14 shadow-sm text-white placeholder-gray-400 text-lg font-normal leading-7 rounded-full border border-gray-200 focus:outline-none py-2 px-4 mb-8"
                                         placeholder="Contact Number"
+                                        value={number}
+                                        onChange={handleNumberChange}
+                                        onKeyDown={(e) => {
+                                            if (e.target.value.length >= 10 && e.key !== 'Backspace') {
+                                                e.preventDefault();
+                                            }
+                                        }}
+                                        maxLength="12"
+                                        required
                                     />
                                     <textarea
-                                        className="w-full h-48 shadow-sm resize-none text-gray-600 placeholder-gray-400 text-lg font-normal leading-7 rounded-2xl border border-gray-200 focus:outline-none px-4 py-4 mb-8"
+                                        className="w-full h-48 shadow-sm resize-none text-white placeholder-gray-400 text-lg font-normal leading-7 rounded-2xl border border-gray-200 focus:outline-none px-4 py-4 mb-8"
                                         placeholder="Message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        required
                                     ></textarea>
                                     <button
                                         type="submit"
@@ -50,20 +89,20 @@ const contactus = () => {
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M22.3092 18.3098C22.0157 18.198 21.8689 18.1421 21.7145 18.1287C21.56 18.1154 21.4058 18.1453 21.0975 18.205L17.8126 18.8416C17.4392 18.9139 17.2525 18.9501 17.0616 18.9206C16.8707 18.891 16.7141 18.8058 16.4008 18.6353C13.8644 17.2551 12.1853 15.6617 11.1192 13.3695C10.9964 13.1055 10.935 12.9735 10.9133 12.8017C10.8917 12.6298 10.9218 12.4684 10.982 12.1456L11.6196 8.72559C11.6759 8.42342 11.7041 8.27233 11.6908 8.12115C11.6775 7.96998 11.6234 7.82612 11.5153 7.5384L10.6314 5.18758C10.37 4.49217 10.2392 4.14447 9.95437 3.94723C9.6695 3.75 9.29804 3.75 8.5551 3.75H5.85778C4.58478 3.75 3.58264 4.8018 3.77336 6.06012C4.24735 9.20085 5.64674 14.8966 9.73544 18.9853C14.0295 23.2794 20.2151 25.1426 23.6187 25.884C24.9335 26.1696 26.0993 25.1448 26.0993 23.7985V21.2824C26.0993 20.5428 26.0993 20.173 25.9034 19.8888C25.7076 19.6046 25.362 19.4729 24.6708 19.2096L22.3092 18.3098Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                                         </svg>
-                                        <h5 class="text-black text-base font-normal leading-6 ml-5">470-601-1911</h5>
+                                        <h5 class="text-black text-base font-normal leading-6 ml-5">+1 639-423-0070</h5>
                                     </a>
                                     <a href="javascript:;" class="flex items-center mb-6">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M2.81501 8.75L10.1985 13.6191C12.8358 15.2015 14.1544 15.9927 15.6032 15.9582C17.0519 15.9237 18.3315 15.0707 20.8905 13.3647L27.185 8.75M12.5 25H17.5C22.214 25 24.5711 25 26.0355 23.5355C27.5 22.0711 27.5 19.714 27.5 15C27.5 10.286 27.5 7.92893 26.0355 6.46447C24.5711 5 22.214 5 17.5 5H12.5C7.78595 5 5.42893 5 3.96447 6.46447C2.5 7.92893 2.5 10.286 2.5 15C2.5 19.714 2.5 22.0711 3.96447 23.5355C5.42893 25 7.78595 25 12.5 25Z" stroke="#000000" stroke-width="2" stroke-linecap="round"></path>
                                         </svg>
-                                        <h5 class="text-black text-base font-normal leading-6 ml-5">gsaab@gmail.com</h5>
+                                        <h5 class="text-black text-base font-normal leading-6 ml-5">gsaabcardetailing@gmail.com</h5>
                                     </a>
                                     <a href="javascript:;" class="flex items-center mb-6">
                                         <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M25 12.9169C25 17.716 21.1939 21.5832 18.2779 24.9828C16.8385 26.6609 16.1188 27.5 15 27.5C13.8812 27.5 13.1615 26.6609 11.7221 24.9828C8.80612 21.5832 5 17.716 5 12.9169C5 10.1542 6.05357 7.5046 7.92893 5.55105C9.8043 3.59749 12.3478 2.5 15 2.5C17.6522 2.5 20.1957 3.59749 22.0711 5.55105C23.9464 7.5046 25 10.1542 25 12.9169Z" stroke="#000000" stroke-width="2"></path>
                                             <path d="M17.5 11.6148C17.5 13.0531 16.3807 14.219 15 14.219C13.6193 14.219 12.5 13.0531 12.5 11.6148C12.5 10.1765 13.6193 9.01058 15 9.01058C16.3807 9.01058 17.5 10.1765 17.5 11.6148Z" stroke="#000000" stroke-width="2"></path>
                                         </svg>
-                                        <h5 class="text-black text-base font-normal leading-6 ml-5">789 Oak Lane, Lakeside, TX 54321</h5>
+                                        <h5 class="text-black text-base font-normal leading-6 ml-5">105 Marquis Court, Saskatoon</h5>
                                     </a>
                                     <div class="flex items-center justify-center border-t border-gray-100 pt-6">
                                         <a href="javascript:;" class="mr-6">
@@ -104,7 +143,7 @@ const contactus = () => {
 
             <div class="col-span-12 lg:col-span-6 min-h-[40] bg-white w-[95%] mx-auto rounded-3xl">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d219104.92617856397!2d75.69186288276121!3d30.900240748451676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a837462345a7d%3A0x681102348ec60610!2sLudhiana%2C%20Punjab!5e0!3m2!1sen!2sin!4v1746941421199!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.3490233435336!2d-106.59408382287371!3d52.115022671957796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5304f31523d0ca25%3A0x6a251b6fabd119e8!2sG%20SAAB%20DETAILING%20SERVICES%20LTD.!5e1!3m2!1sen!2sin!4v1751182525338!5m2!1sen!2sin"
                     width="100%"
                     height="400"
                     style={{ border: 0 }}
