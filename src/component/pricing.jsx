@@ -56,7 +56,7 @@ const Pricing = () => {
         duration: "Starting",
         icon: <FaGem className="w-6 h-6" />,
         features: [
-          "Complete interior & exterior service",
+          "Full interior & exterior service",
           "Headliner & leather conditioning",
           "Clay bar treatment",
           "Banana wax polish",

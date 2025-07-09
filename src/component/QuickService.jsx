@@ -39,7 +39,7 @@ const QuickService = () => {
         <div className="flex justify-center items-center gap-4">
           <p className="text-xl opacity-90">One hour special</p>
           <div className="h-6 w-px bg-white/30"></div>
-          <p className="text-xl">At Low Cost</p>
+          <p className="text-xl">$110</p>
         </div>
       </div>
       

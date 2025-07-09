@@ -46,7 +46,7 @@ const AboutUs = () => {
                 <div className="w-full h-full p-3.5 rounded-xl border border-gray-200 hover:border-gray-400 transition-all duration-700 ease-in-out flex-col justify-start max-md:items-center items-start gap-2.5 inline-flex max-md:text-center">
                   <div className="flex items-center gap-3">
                     <BsCalendarCheck className="text-2xl text-red-700" />
-                    <h4 className="text-red-700 text-2xl font-bold font-manrope leading-9">10+ Years</h4>
+                    <h4 className="text-red-700 text-2xl font-bold font-manrope leading-9">5+ Years</h4>
                   </div>
                   <p className="text-gray-500 text-base font-normal leading-relaxed">Experience in Car Detailing</p>
                 </div>

@@ -12,7 +12,7 @@ const points = [
 	{
 		title: 'Efficient Cleaning',
 		description:
-			'Lobortis consectetuer malesuada feugiat facilisi integer nulla porta vulputate nisi',
+			' Experience unparalleled efficiency with our cleaning services, designed to save you time while delivering exceptional results.',
 		icon: FaCar,
 	},
 	{

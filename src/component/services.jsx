@@ -12,21 +12,21 @@ const servicesData = [
     description: "Thorough vacuuming of your car’s interior to remove dust, dirt, and debris.",
     icon: <FaWater className="text-red-600 text-3xl" />,
   },
-  {
-    title: "Repair Services",
-    description: "Expert repair services for brakes, suspension, steering, and more to ensure your car runs smoothly.",
-    icon: <FaTools className="text-red-600 text-3xl" />,
-  },
-  {
-    title: "Oil Change",
-    description: "Regular oil changes to keep your engine running smoothly and extend its lifespan.",
-    icon: <FaOilCan className="text-red-600 text-3xl" />,
-  },
-  {
-    title: "Battery Replacement",
-    description: "Quick and reliable battery replacement services to keep your car powered up.",
-    icon: <FaBatteryFull className="text-red-600 text-3xl" />,
-  },
+  // {
+  //   title: "Repair Services",
+  //   description: "Expert repair services for brakes, suspension, steering, and more to ensure your car runs smoothly.",
+  //   icon: <FaTools className="text-red-600 text-3xl" />,
+  // },
+  // {
+  //   title: "Oil Change",
+  //   description: "Regular oil changes to keep your engine running smoothly and extend its lifespan.",
+  //   icon: <FaOilCan className="text-red-600 text-3xl" />,
+  // },
+  // {
+  //   title: "Battery Replacement",
+  //   description: "Quick and reliable battery replacement services to keep your car powered up.",
+  //   icon: <FaBatteryFull className="text-red-600 text-3xl" />,
+  // },
   {
     title: "Car Detailing",
     description: "Professional detailing services to restore and enhance your vehicle's appearance inside and out.",
