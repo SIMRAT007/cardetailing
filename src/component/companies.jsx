@@ -9,15 +9,15 @@ const Companies = () => {
     </h2>
     <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
       <img
-        alt="TATA MOTORS"
-        src="https://www.drcipy.com/wp-content/uploads/2021/05/Tata-Motors-800x600.png"
+        alt="Toyota"
+        src="https://www.carlogos.org/car-logos/toyota-logo.png"
         width={240}
         height={80}
         className="col-span-2 max-h-20 w-full object-contain lg:col-span-1 transition duration-300 ease-in-out"
       />
       <img
-        alt="Mahindra"
-        src="https://1000logos.net/wp-content/uploads/2020/04/Mahindra-Logo-2000.png"
+        alt="Chevrolet"
+        src="https://www.carlogos.org/car-logos/chevrolet-logo.png"
         width={240}
         height={80}
         className="col-span-2 max-h-20 w-full object-contain lg:col-span-1 transition duration-300 ease-in-out"
